@@ -4,31 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="topnav">
         <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
+        <a href="todo.html">Todo</a>
     </div>
-    <h1 class="title">Simple Todo Website</h1>
-    <form name="todoForm" id="todoForm"> 
-        <label class="test" for="body">Write your todo</label>
-        <div class="spacer"></div>
-        <textarea name="body" id="body" cols="30" rows="10"></textarea>
-        <div class="spacer"></div>
-        <input type="submit" class="sub" value="Submit">
-    </form>
-    <div class="spacer"></div>
-    <div class="todoList"></div>
-        <ul id="list">
-        </ul>
-    </div>
-    <p>Go to the login page to save your todo list</p>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="app.js"></script>
+   <h1>Login Page</h1> 
+   <form method="post">
+        <label for="username">Username: </label>
+        <div class="spacer"></div>
+        <input type="text" id="username">
+        <div class="spacer"></div>
+        <label for="password">Password: </label>
+        <div class="spacer"></div>
+        <input type="text" id="password">
+        <div class="spacer"></div>
+        <input type="submit" value="Submit">
+   </form>
+   
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+   <script src="todo.js"></script>
 </body>
 </html>
