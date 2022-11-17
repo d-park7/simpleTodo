@@ -23,8 +23,10 @@ label.test {
     font-size: 1.25em;
 }
 
-.topnav a:active {
-    color: brown;
+.topnav a:hover {
+    color: crimson;
 }
 
-.topnav a:
+.topnav a.active {
+    color: white;
+}
