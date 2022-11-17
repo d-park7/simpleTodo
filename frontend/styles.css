@@ -27,6 +27,6 @@ label.test {
     color: crimson;
 }
 
-.topnav a.active {
+.topnav .active {
     color: white;
 }

@@ -13,6 +13,7 @@ $(function() {
         
         let todo = $("<li></li>").text(val_one);
         $("#list").append(todo)
+        $("textarea#body").val("");
         event.preventDefault();
     });
 });
