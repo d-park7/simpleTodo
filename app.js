@@ -1,12 +1,12 @@
-function onSubmit() {
-    let body = document.forms["todoForm"]["body"].value;
-    if (body == "") {
-        alert("Fill in the body");
-        return false;
-    }
-
-    let list = document.getElementById('list');
-    let listItem = document.createElement('li');
-    listItem.appendChild(document.createTextNode(body));
-    list.appendChild(listItem);
-}
+$(function() {
+    $("form").submit((event) => { 
+        let val_one = event.currentTarget[0].value;
+        if (val_one == "") {
+            alert("Put a todo first");
+        }
+        
+        let todo = $("<li></li>").text(val_one);
+        $("#list").append(todo)
+        event.preventDefault();
+    });
+});

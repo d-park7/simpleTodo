@@ -22,3 +22,9 @@ label.test {
     padding: 1em 1em;
     font-size: 1.25em;
 }
+
+.topnav a:active {
+    color: brown;
+}
+
+.topnav a:
