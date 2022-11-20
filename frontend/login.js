@@ -17,7 +17,7 @@ $(function() {
         console.log(username);
         console.log(password);
         
-        new_user = JSON.stringify({id: 1, username: username, password: password});
+        new_user = JSON.stringify({username: username, password: password});
         console.log(new_user)
         $.ajax({
             url:'http://127.0.0.1:8000/users',
