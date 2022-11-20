@@ -30,3 +30,11 @@ label.test {
 .topnav .active {
     color: white;
 }
+
+.divModal {
+    align-self: center;
+}
+
+.modal:modal {
+    display: none;
+}
