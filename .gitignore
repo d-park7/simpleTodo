@@ -1,1 +1,4 @@
 api/__pycache__/*
+
+.venv/
+venv/
