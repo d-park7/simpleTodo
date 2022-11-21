@@ -5,7 +5,7 @@ $(function() {
         }
     });
 
-    $("form").submit(async (event) => {
+    $("form").submit((event) => {
         let username = event.currentTarget[0].value;
         let password = event.currentTarget[1].value;
         if (username == "") {
@@ -20,7 +20,7 @@ $(function() {
         new_user = JSON.stringify({username: username, password: password});
         console.log(new_user)
         $.ajax({
-            url:'http://127.0.0.1:8000/users',
+            url:'http://127.0.0.1:8000/users/',
             type: 'POST',
             contentType: "application/json; charset=UTF-8",
             data: new_user,

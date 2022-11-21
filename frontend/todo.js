@@ -6,14 +6,27 @@ $(function() {
     });
 
     $("form").submit((event) => { 
-        let val_one = event.currentTarget[0].value;
-        if (val_one == "") {
+        let todo = event.currentTarget[0].value;
+        if (todo == "") {
             alert("Put a todo first");
         }
         
-        let todo = $("<li></li>").text(val_one);
-        $("#list").append(todo)
+        let html_todo = $("<li></li>").text(val_one);
+        $("#list").append(html_todo)
         $("textarea#body").val("");
+        new_todo = JSON.stringify({ id: })
+        $.ajax({
+            url:'http://127.0.0.1:8000/todos/',
+            type: 'POST',
+            contentType: 'application/json; charset=UTF-8',
+            data: JSON.stringify(todo),
+            success: function (response) {
+                console.log(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        })
         event.preventDefault();
     });
 });

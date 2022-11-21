@@ -1,0 +1,22 @@
+anyio @ file:///home/conda/feedstock_root/build_artifacts/anyio_1666191106763/work/dist
+certifi @ file:///opt/conda/conda-bld/certifi_1655968806487/work/certifi
+click @ file:///home/conda/feedstock_root/build_artifacts/click_1666798198223/work
+fastapi @ file:///home/conda/feedstock_root/build_artifacts/fastapi_1668393862448/work
+greenlet @ file:///home/builder/ci_310/greenlet_1640790610090/work
+h11 @ file:///home/conda/feedstock_root/build_artifacts/h11_1664132893548/work
+httptools @ file:///home/conda/feedstock_root/build_artifacts/httptools_1666819867047/work
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1663625384323/work
+psycopg2 @ file:///home/builder/ci_310/psycopg2_1640792656405/work
+pydantic @ file:///croot/pydantic_1667416129100/work
+python-dotenv @ file:///home/conda/feedstock_root/build_artifacts/python-dotenv_1662230030282/work
+python-multipart==0.0.5
+PyYAML @ file:///home/conda/feedstock_root/build_artifacts/pyyaml_1666772395347/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+sniffio @ file:///home/conda/feedstock_root/build_artifacts/sniffio_1662051266223/work
+SQLAlchemy @ file:///tmp/abs_18b3238f-9c23-4182-a392-63af30a93c1er8j_yw60/croots/recipe/sqlalchemy_1657867856580/work
+starlette @ file:///home/conda/feedstock_root/build_artifacts/starlette-recipe_1664435018216/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1665144421445/work
+uvicorn @ file:///home/conda/feedstock_root/build_artifacts/uvicorn-split_1666218684560/work
+uvloop==0.17.0
+watchfiles @ file:///home/conda/feedstock_root/build_artifacts/watchfiles_1667838148430/work
+websockets @ file:///home/conda/feedstock_root/build_artifacts/websockets_1666806213473/work
