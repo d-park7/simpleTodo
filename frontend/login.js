@@ -6,31 +6,31 @@ $(function() {
     });
 
     $("form").submit((event) => {
-        let username = event.currentTarget[0].value;
-        let password = event.currentTarget[1].value;
-        if (username == "") {
+        event.preventDefault();
+
+        const formData = new FormData($("form")[0]);
+        console.log(typeof(formData.get("username")))
+        if (formData.get("username") === "") {
             alert("Put a username");
         }
-        if (password == "") {
+        if (formData.get("password") === "") {
             alert("Put a password");
         }
-        console.log(username);
-        console.log(password);
+
+        console.log(formData.get("username"))
+        console.log(formData.get("password"))
         
-        new_user = JSON.stringify({username: username, password: password});
-        console.log(new_user)
         $.ajax({
-            url:'http://127.0.0.1:8000/users/',
+            url:'http://127.0.0.1:8000/token',
             type: 'POST',
-            contentType: "application/json; charset=UTF-8",
-            data: new_user,
+            data: formData,
+            contentType: "application/x-www-form-urlencoded",
             success: function (response) {
-                console.log(response)
+                console.log("success")
             },
             error: function (error) {
                 console.log(error)
             }
         })
-        event.preventDefault();
     });
 })
