@@ -12,6 +12,7 @@ $(function() {
         }
         
         let html_todo = $("<li></li>").text(todo);
+        sessionStorage.setItem(todo, todo)
         $("#list").append(html_todo)
         $("textarea#body").val("");
 
@@ -20,7 +21,6 @@ $(function() {
         // when inserting the todo in
         // not really intended behavior but too lazy to fix rn
         new_todo = JSON.stringify({
-            id: 1,
             todo: todo
         });
 
@@ -35,10 +35,6 @@ $(function() {
             error: function (error) {
                 console.log(new_todo)
                 console.log("error", error);
-            },
-            beforeSend: function(jqxhr) {
-                console.log("jqxhr: ", jqxhr)
-                
             }
         }); 
         event.preventDefault();

@@ -14,15 +14,8 @@ $(function() {
         if (password == "") {
             alert("Put a password");
         }
-        console.log(username);
-        console.log(password);
-        
-        // Adding ```id: 1``` bc schema require user id
-        // but the db will automatically assign an id
-        // when inserting the todo in
-        // not really intended behavior but too lazy to fix rn
-        new_user = JSON.stringify({id: 1, username: username, password: password});
-        console.log(new_user)
+        new_user = JSON.stringify({username: username, password: password});
+
         $.ajax({
             url:'http://127.0.0.1:8000/users/',
             type: 'POST',
