@@ -3,13 +3,25 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Too lazy to hide this
-POSTGRES_URL = "postgresql://david:admin@localhost:5432/todo"
+
+from api.config import settings
+
+
+POSTGRES_URL = settings.DATABASE_URL
 
 engine = create_engine(POSTGRES_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
 
 if __name__ == "__main__":
     try:

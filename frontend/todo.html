@@ -32,25 +32,66 @@
 
         </div>
         -->
-   </form>
-
-        </div>
     </div>
     <h1 class="title">Simple Todo Website</h1>
-    <form name="todoForm" target="_blank" action="http://127.0.0.1:8000/todos/" method="post" id="todoForm"> 
-        <label class="test" for="body">Write your todo</label>
-        <div class="spacer"></div>
-        <textarea name="body" id="body" cols="30" rows="10"></textarea>
-        <div class="spacer"></div>
-        <input type="submit" class="sub" value="Submit">
-        <!--- TODO: need to find better way to set user id-->
-        <div class="hidden" id="user_id"></div>
-    </form>
-    <div class="spacer"></div>
-    <div class="todoList"></div>
-        <ol id="list">
-        </ol>
-    </div>
+    <section>
+        <form name="todoForm" target="_blank" id="todoForm"> 
+            <h4>What's on your todo list?</h4>
+            <div class="spacer"></div>
+            <input 
+                type="text" 
+                class="sub" 
+                name="cntent"
+                id="content"
+                placeholder="write your todo" />
+            <h4>Pick a category</h4>
+            <div class="options">
+                <label>
+                    <input 
+                        type="radio" 
+                        name="category" 
+                        id="category1"
+                        value="business" /> 
+                    <span class="bubble business"></span>
+                    <div>Business</div>
+                </label>
+
+                <label>
+                    <input 
+                        type="radio" 
+                        name="category" 
+                        id="category2"
+                        value="personal" /> 
+                    <span class="bubble personal"></span>
+                    <div>Personal</div>
+                </label>
+
+                </div>
+            <input type="submit" value="Add todo"/>
+        </form>
+    </section>
+
+    <section class="todoList">        
+        <h3>Todo list</h3>
+        <div class="list" id="todoList"></div>
+            <div class="todoItem">
+                <label>
+                    <input type="checkbox"/>
+                    <span class="bubble business"></span> 
+                </label>
+            
+                <div class="todoContent">
+                    <input type="text" value="todo here" readonly /> 
+                </div>
+                
+                <div class="actions">
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <p>Go to the login page to save your todo list</p>
 
 

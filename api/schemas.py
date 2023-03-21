@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class Token(BaseModel):
     access_token: str
     token_type: str
@@ -7,29 +8,28 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     username: str | None = None
 
-class Todo(BaseModel):
+
+class TodoBase(BaseModel):
+    description: str
+
+
+class Todo(TodoBase):
     id: int
-    todo: str
+    user_id: int
     
     class Config:
         orm_mode = True
+        
 
-# not sure why they do this in the docs
-# ig mostly for keeping the same convention
-# of separating the base from the methods?
-class TodoCreate(Todo):
+class TodoCreate(TodoBase):
     pass
 
-class Owns(BaseModel):
-    id: int
-    user_id: int
-
-    class Config:
-        orm_mode = True
 
 class User(BaseModel):
     id: int
     username: str
+    disabled: bool
+    todos: list[Todo] = []
     
     class Config:
         orm_mode = True
@@ -39,4 +39,3 @@ class UserInDB(User):
     
 class UserCreate(User):
     password: str
- 
