@@ -36,3 +36,7 @@ async def authenticate_user(email: str, password: str, db: Session = Depends(get
 @router.post("/token")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     user = await authenticate_user
+    
+@router.get("users/me")
+def read_user_me(token: str = Depends(oauth2_scheme)):
+    return {"token": token}
