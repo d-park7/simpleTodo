@@ -4,7 +4,6 @@ from sqlalchemy.orm import Session
 
 from .models import Base
 from .database import get_db, engine
-from .schemas import User, UserCreate, UserInDB, Todo 
 from .routers import auth, crud_todo, crud_user
 
 Base.metadata.create_all(bind=engine)
@@ -23,6 +22,7 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(crud_user.router)
+app.include_router(crud_todo.router)
 
 @app.get("/api/healthchecker")
 def root():

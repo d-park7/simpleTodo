@@ -6,7 +6,7 @@ class Token(BaseModel):
     token_type: str
 
 class TokenData(BaseModel):
-    username: str | None = None
+    email: str | None = None
 
 
 class TodoBase(BaseModel):
@@ -19,7 +19,6 @@ class Todo(TodoBase):
     
     class Config:
         orm_mode = True
-        
 
 class TodoCreate(TodoBase):
     pass
@@ -27,15 +26,12 @@ class TodoCreate(TodoBase):
 
 class User(BaseModel):
     id: int
-    username: str
-    disabled: bool
+    email: str
+    disabled: bool 
     todos: list[Todo] = []
     
     class Config:
         orm_mode = True
 
 class UserInDB(User):
-    password: str
-    
-class UserCreate(User):
-    password: str
+    hashed_password: str
